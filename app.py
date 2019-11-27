@@ -16,9 +16,9 @@ def predict():
     '''
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
+    prediction = lr.predict(final_features)
 
-    output = round(prediction[0], 2)
+    output = round(prediction[0], 1)
 
     return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
 
