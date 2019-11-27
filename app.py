@@ -18,7 +18,7 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = lr.predict(final_features)
 
-    output = round(prediction[0], 1)
+    output = round(prediction[0], 2)
 
     return render_template('index.html', prediction_text='price of the Sugar {}'.format(output))
 
